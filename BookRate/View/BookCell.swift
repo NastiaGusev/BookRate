@@ -1,9 +1,3 @@
-//
-//  BookCell.swift
-//  BookRate
-//
-//  Created by Nastia Gusev on 13/06/2022.
-//
 
 import UIKit
 
