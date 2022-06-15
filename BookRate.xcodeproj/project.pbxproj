@@ -18,8 +18,10 @@
 		AB4A60A828578942009E6239 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4A60A628578942009E6239 /* BookCell.swift */; };
 		AB4A60A928578942009E6239 /* BookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB4A60A728578942009E6239 /* BookCell.xib */; };
 		AB4A60AB28578998009E6239 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4A60AA28578998009E6239 /* Constants.swift */; };
+		AB72F7B4285909400062FD0F /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB72F7B3285909400062FD0F /* Book.swift */; };
+		AB72F7B6285A2A190062FD0F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB72F7B5285A2A190062FD0F /* GoogleService-Info.plist */; };
+		AB72F7B8285A48E80062FD0F /* BooksManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB72F7B7285A48E80062FD0F /* BooksManager.swift */; };
 		AB97490C285798C0003A0C00 /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB97490B285798C0003A0C00 /* BookListViewController.swift */; };
-		AB97490E28579D7E003A0C00 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB97490D28579D7D003A0C00 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,8 +38,10 @@
 		AB4A60A628578942009E6239 /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BookCell.swift; path = BookRate/View/BookCell.swift; sourceTree = SOURCE_ROOT; };
 		AB4A60A728578942009E6239 /* BookCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = BookCell.xib; path = BookRate/View/BookCell.xib; sourceTree = SOURCE_ROOT; };
 		AB4A60AA28578998009E6239 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		AB72F7B3285909400062FD0F /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		AB72F7B5285A2A190062FD0F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AB72F7B7285A48E80062FD0F /* BooksManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksManager.swift; sourceTree = "<group>"; };
 		AB97490B285798C0003A0C00 /* BookListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BookListViewController.swift; path = BookRate/Controller/BookListViewController.swift; sourceTree = SOURCE_ROOT; };
-		AB97490D28579D7D003A0C00 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B52F8A4C0D95CD29EB74D09F /* Pods_BookRate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookRate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F62565F28705398A786D0D6F /* Pods-BookRate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookRate.release.xcconfig"; path = "Target Support Files/Pods-BookRate/Pods-BookRate.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,7 +105,7 @@
 				AB0627E528421D5100488712 /* Assets.xcassets */,
 				AB0627E728421D5100488712 /* LaunchScreen.storyboard */,
 				AB0627EA28421D5100488712 /* Info.plist */,
-				AB97490D28579D7D003A0C00 /* GoogleService-Info.plist */,
+				AB72F7B5285A2A190062FD0F /* GoogleService-Info.plist */,
 			);
 			path = BookRate;
 			sourceTree = "<group>";
@@ -129,6 +133,8 @@
 		AB0627F228429B9A00488712 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AB72F7B3285909400062FD0F /* Book.swift */,
+				AB72F7B7285A48E80062FD0F /* BooksManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -195,7 +201,7 @@
 			files = (
 				AB4A60A928578942009E6239 /* BookCell.xib in Resources */,
 				AB0627E928421D5100488712 /* LaunchScreen.storyboard in Resources */,
-				AB97490E28579D7E003A0C00 /* GoogleService-Info.plist in Resources */,
+				AB72F7B6285A2A190062FD0F /* GoogleService-Info.plist in Resources */,
 				AB0627E628421D5100488712 /* Assets.xcassets in Resources */,
 				AB0627E428421D4E00488712 /* Main.storyboard in Resources */,
 			);
@@ -250,6 +256,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB72F7B4285909400062FD0F /* Book.swift in Sources */,
+				AB72F7B8285A48E80062FD0F /* BooksManager.swift in Sources */,
 				AB4A60A828578942009E6239 /* BookCell.swift in Sources */,
 				AB0627E128421D4E00488712 /* LoginViewController.swift in Sources */,
 				AB0627DD28421D4E00488712 /* AppDelegate.swift in Sources */,

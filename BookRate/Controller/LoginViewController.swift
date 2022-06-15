@@ -1,5 +1,6 @@
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 class LoginViewController: UIViewController {
     
@@ -7,14 +8,18 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     @IBOutlet weak var signinButton: UIButton!
-    @IBOutlet weak var signUpButton: UIButton!
+    
+    let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        clearEmailPassword()
     }
     
     @IBAction func signInClicked(_ sender: Any) {
         if let email = emailTF.text, let password = passwordTF.text {
+            clearEmailPassword()
             if signinButton.titleLabel?.text == "Register" {
                 Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                     self.navigateToBookList(error)
@@ -25,6 +30,11 @@ class LoginViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    func clearEmailPassword(){
+        emailTF.text = ""
+        passwordTF.text = ""
     }
     
     func navigateToBookList(_ error: Error?){
@@ -47,5 +57,21 @@ class LoginViewController: UIViewController {
         }
     }
     
+    func uploadBooks(){
+        print(db)
+        db.collection(K.FStore.collectionName)
+            .addDocument(data:[K.FStore.imageField: "https://user-images.githubusercontent.com/49269198/173869254-a020e14f-6640-4724-9e9b-ba564b5ebb5f.png",
+                               K.FStore.titleField: "Ugly Love: A Novel",
+                               K.FStore.authorField: "Colleen Hoover",
+                               K.FStore.descriptionField: "",
+                               K.FStore.likesCountField: "0"
+           ]) { (error) in
+                if let e = error {
+                    print("There was an error \(e)")
+                } else {
+                    print("Successfully saved data")
+                }
+            }
+    }
 }
 

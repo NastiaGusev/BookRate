@@ -29,11 +29,11 @@
                                             <constraint firstAttribute="width" constant="274" id="vnY-Nh-pJo"/>
                                         </constraints>
                                     </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jVz-bW-CAa">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="email" placeholder="email" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jVz-bW-CAa">
                                         <rect key="frame" x="20" y="18.5" width="354" height="23"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" textContentType="email"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="email"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -57,11 +57,11 @@
                                             <constraint firstAttribute="height" constant="50" id="pTM-uX-pJk"/>
                                         </constraints>
                                     </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="password" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Qk-gS-cn1">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="password" placeholder="password" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Qk-gS-cn1">
                                         <rect key="frame" x="20" y="19" width="354" height="22"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                                 <viewLayoutGuide key="safeArea" id="eaU-5t-3qy"/>
@@ -127,7 +127,6 @@
                     <connections>
                         <outlet property="emailTF" destination="jVz-bW-CAa" id="g60-AF-8YT"/>
                         <outlet property="passwordTF" destination="8Qk-gS-cn1" id="j0d-Tm-XQC"/>
-                        <outlet property="signUpButton" destination="omp-9a-ibK" id="gEe-aT-Hb1"/>
                         <outlet property="signinButton" destination="w1f-AV-8LS" id="jmg-rC-yp6"/>
                         <segue destination="fxV-zj-JNH" kind="show" identifier="SigninToBookList" id="bVX-tz-eRR"/>
                     </connections>
@@ -149,27 +148,36 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZG-x9-Vcz">
                                         <rect key="frame" x="0.0" y="0.0" width="118" height="32"/>
-                                        <color key="tintColor" red="0.01269442495" green="0.62860125300000003" blue="0.81640237569999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.011764705882352941" green="0.62860125300000003" blue="0.81640237569999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Hot today">
                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="bottomButtonPressed:" destination="fxV-zj-JNH" eventType="touchUpInside" id="YYH-hJ-WVv"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y89-tg-Dkf">
                                         <rect key="frame" x="128" y="0.0" width="118" height="32"/>
-                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="0.01269442495" green="0.62860125300000003" blue="0.81640237569999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="All">
                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="bottomButtonPressed:" destination="fxV-zj-JNH" eventType="touchUpInside" id="W85-MU-GEa"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOA-Og-sg0">
                                         <rect key="frame" x="256" y="0.0" width="118" height="32"/>
-                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="0.01269442495" green="0.62860125300000003" blue="0.81640237569999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Favorites">
                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="bottomButtonPressed:" destination="fxV-zj-JNH" eventType="touchUpInside" id="1Dm-yl-iOs"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -207,7 +215,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="QLG-oJ-WiN" kind="show" id="FQf-JF-cfG"/>
+                        <outlet property="allButton" destination="y89-tg-Dkf" id="u1X-bU-gDR"/>
+                        <outlet property="favoritesButton" destination="dOA-Og-sg0" id="XTS-2d-lda"/>
+                        <outlet property="hotTodayButton" destination="EZG-x9-Vcz" id="A3Q-wf-DTa"/>
+                        <outlet property="tableView" destination="6xO-VS-8Gs" id="6NQ-Ep-ODd"/>
+                        <segue destination="QLG-oJ-WiN" kind="show" identifier="BookListToBook" id="FQf-JF-cfG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B0C-8n-Wuu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -217,7 +229,7 @@
         <!--Book View Controller-->
         <scene sceneID="0oC-5V-mRy">
             <objects>
-                <viewController id="QLG-oJ-WiN" customClass="BookViewController" sceneMemberID="viewController">
+                <viewController id="QLG-oJ-WiN" customClass="BookViewController" customModule="BookRate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mp2-Ee-cbJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -342,6 +354,14 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="authorTextView" destination="Wmm-x7-3gA" id="pt9-71-otZ"/>
+                        <outlet property="bookImage" destination="4eT-mo-ZBj" id="Bkb-FK-SK5"/>
+                        <outlet property="bookNameTextView" destination="bVr-pb-9zK" id="L6r-dm-9v2"/>
+                        <outlet property="descriptionTextView" destination="Pdb-fp-LuW" id="kOI-5G-cJl"/>
+                        <outlet property="genresTextView" destination="kal-IB-mDy" id="a2j-UX-Vwi"/>
+                        <outlet property="likesCountTextView" destination="gM8-Tz-den" id="GlF-QD-6fw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EEd-42-WIh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
