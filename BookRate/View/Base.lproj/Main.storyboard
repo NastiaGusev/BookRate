@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -30,7 +31,7 @@
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="email" placeholder="email" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jVz-bW-CAa">
-                                        <rect key="frame" x="20" y="18.5" width="354" height="23"/>
+                                        <rect key="frame" x="175.5" y="19" width="43" height="22"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="email"/>
@@ -38,10 +39,8 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="jVz-bW-CAa" firstAttribute="leading" secondItem="gIP-Z1-mhj" secondAttribute="leading" constant="20" id="FKe-kt-A2T"/>
                                     <constraint firstItem="vjE-dZ-Kk4" firstAttribute="centerY" secondItem="gIP-Z1-mhj" secondAttribute="centerY" id="Kup-9x-vgh"/>
                                     <constraint firstItem="jVz-bW-CAa" firstAttribute="centerY" secondItem="gIP-Z1-mhj" secondAttribute="centerY" id="P9K-Ca-dae"/>
-                                    <constraint firstAttribute="trailing" secondItem="jVz-bW-CAa" secondAttribute="trailing" constant="20" id="RKd-xD-8CS"/>
                                     <constraint firstAttribute="height" constant="60" id="brZ-9w-M2G"/>
                                     <constraint firstItem="jVz-bW-CAa" firstAttribute="centerX" secondItem="gIP-Z1-mhj" secondAttribute="centerX" id="fxo-Um-mEN"/>
                                     <constraint firstItem="vjE-dZ-Kk4" firstAttribute="centerX" secondItem="gIP-Z1-mhj" secondAttribute="centerX" id="oZ0-dv-rhQ"/>
@@ -159,7 +158,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y89-tg-Dkf">
                                         <rect key="frame" x="128" y="0.0" width="118" height="32"/>
-                                        <color key="tintColor" red="0.01269442495" green="0.62860125300000003" blue="0.81640237569999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.011764705882352941" green="0.62745098039215685" blue="0.81568627450980391" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="All">
                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
@@ -266,20 +265,32 @@
                                     <constraint firstAttribute="height" constant="140" id="0xS-aK-jAS"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="OQP-WQ-oWu">
-                                <rect key="frame" x="173" y="349" width="68" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="OQP-WQ-oWu">
+                                <rect key="frame" x="166.5" y="349" width="81" height="30"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="fmg-lf-1MK">
-                                        <rect key="frame" x="0.0" y="1.5" width="30" height="27.5"/>
-                                        <color key="tintColor" red="0.91223186249999999" green="0.1158787981" blue="0.13546159860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDm-xK-5zH">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="Gtg-7L-mLh"/>
-                                            <constraint firstAttribute="width" constant="30" id="xOJ-b4-jWk"/>
+                                            <constraint firstAttribute="width" constant="40" id="xjK-AY-fXo"/>
                                         </constraints>
-                                    </imageView>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <color key="tintColor" red="0.91223186249999999" green="0.1158787981" blue="0.13546159860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal">
+                                            <color key="titleColor" red="0.91223186249999999" green="0.1158787981" blue="0.13546159860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <imageReference key="image" image="heart.fill" catalog="system" symbolScale="large"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="heartClicked:" destination="QLG-oJ-WiN" eventType="touchUpInside" id="UDA-6A-Bhe"/>
+                                        </connections>
+                                    </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="12" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gM8-Tz-den">
-                                        <rect key="frame" x="38" y="0.0" width="30" height="30"/>
+                                        <rect key="frame" x="41" y="0.0" width="40" height="30"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="WQT-sc-idJ"/>
+                                            <constraint firstAttribute="width" constant="40" id="nET-vV-K2g"/>
+                                        </constraints>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -360,6 +371,7 @@
                         <outlet property="bookNameTextView" destination="bVr-pb-9zK" id="L6r-dm-9v2"/>
                         <outlet property="descriptionTextView" destination="Pdb-fp-LuW" id="kOI-5G-cJl"/>
                         <outlet property="genresTextView" destination="kal-IB-mDy" id="a2j-UX-Vwi"/>
+                        <outlet property="heartButton" destination="yDm-xK-5zH" id="l8y-AE-xZ1"/>
                         <outlet property="likesCountTextView" destination="gM8-Tz-den" id="GlF-QD-6fw"/>
                     </connections>
                 </viewController>

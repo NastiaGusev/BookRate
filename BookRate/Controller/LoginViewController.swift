@@ -33,8 +33,8 @@ class LoginViewController: UIViewController {
     }
     
     func clearEmailPassword(){
-        emailTF.text = ""
-        passwordTF.text = ""
+        emailTF.text = "a@b.com"
+        passwordTF.text = "123456"
     }
     
     func navigateToBookList(_ error: Error?){

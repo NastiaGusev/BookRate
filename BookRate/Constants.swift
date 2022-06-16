@@ -11,6 +11,8 @@ struct K {
     
     struct FStore {
         static let collectionName = "books"
+        static let collectionUsers = "users"
+        static let collectionFavorites = "favorites"
         static let imageField = "image"
         static let titleField = "title"
         static let authorField = "author"
