@@ -23,7 +23,7 @@ class BookListViewController: UIViewController {
         
         hotTodayButton.titleLabel?.textColor = .darkGray
         favoritesButton.titleLabel?.textColor = .darkGray
-        loadBooks()
+        //loadBooks()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -31,8 +31,9 @@ class BookListViewController: UIViewController {
         if isViewLoaded {
             setAllButtonsToNormal()
             setCurrentButtonPressed()
+            booksManager.books = []
             booksManager.likedBooks = []
-            loadFavorites()
+            loadBooks()
         }
     }
     
@@ -76,13 +77,14 @@ class BookListViewController: UIViewController {
             let destinationVC = segue.destination as! BookViewController
             
             destinationVC.booksManager = booksManager
-            
+            destinationVC.selectedList = currentList
             let selectedBook = booksManager.books[booksManager.selectedBookIndex]
             if booksManager.checkIfBookIsInList(book: selectedBook , bookList: booksManager.likedBooks) {
                 destinationVC.liked = true
             } else {
                 destinationVC.liked = false
             }
+            
         }
     }
 

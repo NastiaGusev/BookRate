@@ -32,4 +32,13 @@ struct BooksManager {
             }
         }
     }
+    
+    mutating func removeBookFromAllBooks(_ book: Book){
+        for i in (0 ..< books.count ) {
+            if books[i].title == book.title && books[i].author == book.author{
+                books.remove(at: i)
+                break
+            }
+        }
+    }
 }
