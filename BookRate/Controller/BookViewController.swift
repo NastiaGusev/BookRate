@@ -14,8 +14,7 @@ class BookViewController: UIViewController {
     
     let db = Firestore.firestore()
     var liked: Bool = false
-    var selectedList = K.allBooks
-    var selectedBook = Book(image: "", title: "", author: "", genres: "", description: "", likesCount: "")
+    var selectedBook = Book(image: "", title: "", author: "", genres: "", description: "", likesCount: 0)
     var booksManager = BooksManager()
 
     override func viewDidLoad() {
@@ -23,23 +22,13 @@ class BookViewController: UIViewController {
         updateBookView()
     }
     
-    func getCurrentBook() -> Book{
-        if selectedList == K.allBooks {
-            return booksManager.books[booksManager.selectedBookIndex]
-        } else if selectedList == K.favoriteBooks {
-            return booksManager.likedBooks[booksManager.selectedBookIndex]
-        } else {
-            return booksManager.books[booksManager.selectedBookIndex]
-        }
-    }
-    
     func updateBookView(){
-        selectedBook = getCurrentBook()
+        selectedBook = booksManager.getCurrentBook()
         
         bookNameTextView.text = selectedBook.title
         authorTextView.text = selectedBook.author
-        likesCountTextView.text = selectedBook.likesCount
-        descriptionTextView.text = selectedBook.description
+        likesCountTextView.text = String(selectedBook.likesCount)
+        descriptionTextView.text = selectedBook.description.replacingOccurrences(of: "/n", with: "\n")
         genresTextView.text = selectedBook.genres
         updateHeartView()
         
@@ -51,7 +40,7 @@ class BookViewController: UIViewController {
     @IBAction func heartClicked(_ sender: UIButton) {
         updateLike()
         updateLikesCount()
-        updateFavorites(selectedBook)
+        updateFavorites()
     }
     
     func updateLike(){
@@ -70,28 +59,26 @@ class BookViewController: UIViewController {
         }
     }
     
-    func updateFavorites(_ book: Book){
-        if !booksManager.checkIfBookIsInList(book: book, bookList: booksManager.likedBooks){
-            booksManager.likedBooks.append(book)
-            uploadFavorite(book)
+    func updateFavorites(){
+        if !booksManager.checkIfBookIsInList(selectedBook, booksManager.likedBooks){
+            booksManager.likedBooks.append(selectedBook)
+            uploadFavorite(selectedBook)
         } else {
-            booksManager.removeBookFromFavorites(book)
-            deleteFavorite(book)
+            booksManager.removeBookFromFavorites(selectedBook)
+            deleteFavorite(selectedBook)
         }
     }
     
     func updateLikesCount(){
-        var likes = Int(selectedBook.likesCount) ?? 0
+        var likes = selectedBook.likesCount
         if liked {
             likes += 1
         } else {
             likes -= 1
         }
-        selectedBook.likesCount = String(likes)
-        likesCountTextView.text = selectedBook.likesCount
+        selectedBook.likesCount = likes
+        likesCountTextView.text = String(selectedBook.likesCount)
         updateBook(selectedBook)
-        print(likes)
-        print(selectedBook.likesCount)
     }
     
     @IBAction func logoutPressed(_ sender: UIBarButtonItem) {

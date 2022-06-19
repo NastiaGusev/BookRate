@@ -4,7 +4,6 @@ import FirebaseFirestore
 
 class LoginViewController: UIViewController {
     
- 
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     @IBOutlet weak var signinButton: UIButton!
@@ -13,7 +12,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         clearEmailPassword()
     }
     
@@ -41,7 +39,6 @@ class LoginViewController: UIViewController {
         if let e = error {
             print(e)
         } else {
-            //Navigate to loginController
             self.performSegue(withIdentifier: K.loginSegue, sender: self)
         }
     }

@@ -7,5 +7,5 @@ struct Book {
     let author: String
     let genres: String
     let description: String
-    var likesCount: String
+    var likesCount: Int
 }
