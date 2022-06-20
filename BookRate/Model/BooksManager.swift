@@ -19,6 +19,10 @@ struct BooksManager {
     }
     
     func checkIfCurrentBookLiked() -> Bool {
+        if currentList == K.favoriteBooks {
+            return true
+        }
+        
         var selectedBook = Book(image: "", title: "", author: "", genres: "", description: "", likesCount: 0)
         if currentList == K.allBooks {
             selectedBook = books[selectedBookIndex]

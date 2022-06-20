@@ -34,7 +34,7 @@
                                         <rect key="frame" x="175.5" y="19" width="43" height="22"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="email"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="email"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -259,7 +259,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="4eT-mo-ZBj">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4eT-mo-ZBj">
                                 <rect key="frame" x="20" y="199" width="374" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="0xS-aK-jAS"/>
@@ -400,7 +400,6 @@
     </scenes>
     <resources>
         <image name="bookRate_logo" width="441" height="131"/>
-        <image name="download" width="180" height="280"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="textField" width="506" height="97"/>
         <systemColor name="labelColor">

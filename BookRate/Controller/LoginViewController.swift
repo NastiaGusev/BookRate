@@ -2,7 +2,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseFirestore
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
@@ -12,8 +12,16 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.emailTF.delegate = self
+        self.passwordTF.delegate = self
         clearEmailPassword()
     }
+    
+    @objc func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+           self.view.endEditing(true)
+           return false
+       }
     
     @IBAction func signInClicked(_ sender: Any) {
         if let email = emailTF.text, let password = passwordTF.text {
@@ -31,8 +39,8 @@ class LoginViewController: UIViewController {
     }
     
     func clearEmailPassword(){
-        emailTF.text = "a@b.com"
-        passwordTF.text = "123456"
+        emailTF.text = ""
+        passwordTF.text = ""
     }
     
     func navigateToBookList(_ error: Error?){
@@ -61,7 +69,7 @@ class LoginViewController: UIViewController {
                                K.FStore.titleField: "Ugly Love: A Novel",
                                K.FStore.authorField: "Colleen Hoover",
                                K.FStore.descriptionField: "",
-                               K.FStore.likesCountField: "0"
+                               K.FStore.likesCountField: 0
            ]) { (error) in
                 if let e = error {
                     print("There was an error \(e)")

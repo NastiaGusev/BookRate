@@ -248,7 +248,6 @@ extension BookListViewController {
                         }
                     }
                 }
-                print(self.booksManager.likedBooks)
                 loadFavorites()
             }
         }
